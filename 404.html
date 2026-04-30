@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Moved — View Transition experiment</title>
-    <meta http-equiv="refresh" content="0; url=https://corewebvitals.github.io/pagespeed/experiments/view-transition/" />
     <link rel="canonical" href="https://corewebvitals.github.io/pagespeed/experiments/view-transition/" />
     <style>
       body { font-family: ui-sans-serif, system-ui, sans-serif; max-width: 480px; margin: 6rem auto; padding: 0 1.5rem; color: #18181b; line-height: 1.6; }
@@ -12,9 +11,13 @@
   </head>
   <body>
     <h1 style="font-size:1.25rem;font-weight:600;letter-spacing:-0.01em;">This page has moved.</h1>
-    <p>The View Transition experiment now lives at <a href="https://corewebvitals.github.io/pagespeed/experiments/view-transition/">corewebvitals.github.io/pagespeed/experiments/view-transition/</a>.</p>
+    <p>The View Transition experiment now lives at <a id="newurl" href="https://corewebvitals.github.io/pagespeed/experiments/view-transition/">corewebvitals.github.io/pagespeed/experiments/view-transition/</a>.</p>
     <script>
-      window.location.replace("https://corewebvitals.github.io/pagespeed/experiments/view-transition/");
+      var newPath = window.location.pathname.replace(/^\/view-transition/, "/pagespeed/experiments/view-transition");
+      var target = window.location.origin + newPath + window.location.search + window.location.hash;
+      var a = document.getElementById("newurl");
+      if (a) { a.href = target; a.textContent = target; }
+      window.location.replace(target);
     </script>
   </body>
 </html>
